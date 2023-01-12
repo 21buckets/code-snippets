@@ -39,7 +39,7 @@ fi
 echo "$$" > $PIDFILE
 
 # send request & check for expected response
-curl -fNks https://${IP}:${PORT}/mgmt/tm/cm/device/'?$select=name,failoverState,managementIp' --header 'Authorization: Basic YWRtaW46RW52ZWxvcGUtUHJvd2xpbmctRGVmcmF1ZA==' | jq -r --arg addr "${IP}" '.items[] | select(.managementIp | contains($addr))'| grep -i "active" 2>&1 > /dev/null 
+curl -fNks https://${IP}:${PORT}/mgmt/tm/cm/device/'?$select=name,failoverState,managementIp' --header 'Authorization: Basic *******************' | jq -r --arg addr "${IP}" '.items[] | select(.managementIp | contains($addr))'| grep -i "active" 2>&1 > /dev/null 
 
 
 # mark node UP if expected response was received
