@@ -1,0 +1,33 @@
+{
+   "policy" : {
+      "applicationLanguage" : "utf-8",
+      "caseInsensitive" : false,
+      "description" : "Fundamental Policy",
+      "enablePassiveMode" : false,
+      "enforcementMode" : "blocking",
+      "policy-builder" : {
+         "enableUntrustedTrafficSiteChangeTracking" : true,
+         "trafficTighten" : {
+            "maxModificationSuggestionScore" : 60,
+            "totalRequests" : 2
+         },
+         "untrustedTrafficLoosen" : {
+            "differentSources" : 1,
+            "minHoursBetweenSamples" : 0.0005
+         },
+         "untrustedTrafficSiteChangeTracking" : {
+            "differentSources" : 1,
+            "minMinutesBetweenSamples" : 0.005
+         }
+      },
+      "protocolIndependent" : false,
+      "softwareVersion" : "16.1.2",
+      "signature-settings" : {
+         "signatureStaging" : false
+      },
+      "template" : {
+         "name" : "POLICY_TEMPLATE_FUNDAMENTAL"
+      },
+      "type" : "security"
+   }
+}
